@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do List</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+  <!-- Your CSS and JS -->
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="Todo-app">
+      <h1>To Do List</h1>
+      
+      <!-- تم تعديل تنسيق الفورم -->
+      <form class="task-form">
+        <input type="text" id="taskInput" placeholder="Add a new task..." required />
+        <button type="submit" id="addTaskButton">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </form>
+
+      <div class="todos-container">
+        <ul id="todoList"></ul>
+       
+      </div>
+
+      <!-- عناصر التحكم -->
+      <div class="controls">
+        <button id="clearAll" title="Clear All Tasks">
+          <i class="fa-solid fa-trash-can"></i> Clear All
+        </button>
+        <div class="filters">
+          <button data-filter="all" class="filter active">All</button>
+          <button data-filter="active" class="filter">Active</button>
+          <button data-filter="completed" class="filter">Completed</button>
+        </div>
+      </div>
+
+      <!-- عداد المهام -->
+      <p id="taskCount">Total: 0</p>
+
+    </div>
+  </div>
+</body>
+</html>

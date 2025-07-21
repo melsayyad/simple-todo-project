@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/imo.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.Todo-app {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  color: #ffffff;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease-in-out;
+}
+
+.task-form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+  transition: 0.3s ease-in-out;
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.2);
+}
+
+.task-form input::placeholder {
+  color: #ffffff;
+}
+
+#addTaskButton {
+  width: 52px;
+  height: 52px;
+  background-color: #00c896;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 200, 150, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addTaskButton:hover {
+  background-color: #00a77d;
+  transform: scale(1.05);
+}
+
+.todos-container {
+  width: 100%;
+}
+
+#todoList {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.todo-item {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-3px);
+}
+
+.todo-item.completed .task-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.2s ease;
+}
+
+.actions button:hover {
+  color: #00ffcc;
+  transform: scale(1.2);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.controls button {
+  padding: 10px 14px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.filters button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #cfcfcf;
+}
+
+.filters .active {
+  background-color: #2196f3;
+  color: white;
+}
+
+#taskCount {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+  opacity: 0.85;
+  font-size: 16px;
+}
+
+/* Animation لما المهمة تدخل */
+.todo-item {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
